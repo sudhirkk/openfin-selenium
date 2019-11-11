@@ -66,7 +66,7 @@ public class TestOpenFinApp {
 
     private static void launchOpenfinApp(String path, String args) throws Exception{
         System.out.println(String.format("Starting %s %s", path, args));
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.add("cmd.exe");
         list.add("/C");
         list.add(path);
@@ -89,12 +89,12 @@ public class TestOpenFinApp {
 
     public static class MainPage {
         @FindBy(id="price")
-        static WebElement priceElement;
+        WebElement priceElement;
 
         @FindBy(id="send_button")
-        static WebElement sendButton;
+        WebElement sendButton;
 
-        public static void sendPrice(double price) {
+        private void sendPrice(double price) {
             String priceStr = String.format("%.2f", price);
             priceElement.clear();
             priceElement.sendKeys(priceStr);
