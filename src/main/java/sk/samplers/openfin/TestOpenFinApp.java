@@ -59,7 +59,9 @@ public class TestOpenFinApp {
             mainPage.sendPrice(price);
             sleep(2);
         }
-        System.out.println("Done");
+        System.out.println("Done. Closing the window.");
+        sleep(1);
+        driver.close();
     }
 
     private static void launchOpenfinApp(String path, String args) throws Exception{
